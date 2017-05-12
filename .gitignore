@@ -40,5 +40,4 @@ gen### C++ template
 *.out
 *.app
 
-将删除 .gitignore
-将删除 cmake-build-debug/CMakeFiles/CMakeTmp/
+cmake-build-debug/
