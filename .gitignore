@@ -40,4 +40,4 @@ gen### C++ template
 *.out
 *.app
 
-cmake-build-debug/
+
