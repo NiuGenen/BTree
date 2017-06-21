@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "BTree.h"
-BTree::BTree() : root(nullptr), t(2) {
+BTree::BTree(int tt) : root(nullptr), t(tt) {
 
 }
 BTree::~BTree() {

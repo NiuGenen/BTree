@@ -12,7 +12,7 @@ typedef struct BTreeNode {
 } BTreeNode, *PBTreeNode;
 class BTree {
  public:
-  BTree();
+  BTree(int tt);
   virtual ~BTree();
   bool Insert(int key);
   bool Delete(int key);

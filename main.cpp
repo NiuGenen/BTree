@@ -1,12 +1,19 @@
 #include "BTree.h"
+#include <iostream>
 
 int main() {
-  BTree b;
-  for (int i = 1; i <= 5; ++i) {
+  BTree b(4);
+  int i;
+  for (i = 1; i <= 32; ++i) {
     b.Insert(i);
   }
-  b.Delete(2);
-  b.Delete(3);
-  b.Delete(1);
   b.Display();
+  char asd;
+  while(1){
+    b.Insert(i+1);
+    std::cout << "----------" << i+1 << "------------" << std:: endl;
+    b.Display();
+    i += 1;
+    std::cin >> asd;
+  }
 }
