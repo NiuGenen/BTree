@@ -4,18 +4,18 @@
 #include<iostream>
 
 typedef int File_Nat_Entry_ID_Type;
-typedef int Dir_Nat_Entry_ID_Type;
 typedef int dir_meta_number_t;
+typedef dir_meta_number_t Dir_Nat_Entry_ID_Type;
 typedef unsigned int uint32_t;
 
 // global vars:
 // meta_block_area_t* dir_meta_mba;
 //      struct dir_meta_obj;
-      void dir_meta_init();
-      dir_meta_number_t dir_meta_alloc_obj_id();
-//      void dir_meta_dealloc_obj_id();
-      void dir_meta_write_by_obj_id(Dir_Nat_Entry_ID_Type dobj_id, struct dir_meta_obj * obj);
-      struct dir_meta_obj* dir_meta_read_by_obj_id(Dir_Nat_Entry_ID_Type dobj_id);
+        void dir_meta_init();
+        dir_meta_number_t dir_meta_alloc_obj_id();
+        void dir_meta_dealloc_obj_id(dir_meta_number_t dobj_id);
+        void dir_meta_write_by_obj_id(Dir_Nat_Entry_ID_Type dobj_id, struct dir_meta_obj * obj);
+        struct dir_meta_obj* dir_meta_read_by_obj_id(Dir_Nat_Entry_ID_Type dobj_id);
 // meta_block_area_t* file_meta_mba;
 //      struct file_meta_obj;
 //      void file_meta_init();
@@ -67,5 +67,15 @@ class DirBTree{
         int index,
         struct dir_meta_obj* dobj_child,
         Dir_Nat_Entry_ID_Type dobj_child_id);
+    void print_dir_node(struct dir_meta_obj* dobj,
+        Dir_Nat_Entry_ID_Type dobj_id,
+        int print_child);
+    void delete_not_half(strucy dir_meta_obj* dobj,
+        Dir_Nat_Entry_ID_Type dobj_id,
+        struct file_descriptor fdes);
+    void union_child(struct dir_meta_obj* obj_parent, Dir_Nat_Entry_ID_Type obj_parent_id,
+        struct dir_meta_obj* obj_cur,  Dir_Nat_Entry_ID_Type obj_cur_id,    // cur_id   == parent->cobj_id[ index ]
+        struct dir_meta_obj* obj_righ, Dir_Nat_Entry_ID_Type obj_right_id,  // right_id == parent-<cobj_id[ index+1 ]
+        int index);
 };
 
