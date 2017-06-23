@@ -4,6 +4,7 @@
 
 - class DirBTree : btree for `struct dir_meta_obj`
 
+```
     // public interface of DirBTree
      	
     void init();
@@ -15,10 +16,12 @@
     File_Nat_Entry_ID_Type get_file_meta_obj_id(
         struct file_descriptor fdes );
     void display();
+```
 
 - `struct dir_meta_obj` : 4KB obj ; R/W by `meta_block_area` with its `obj_id`
 	- this is also the node of DirBTree
 
+```
     #define Dir_Node_Half 2
     #define Dir_Node_Degree ( Dir_Node_Half * 2 + 1 )
      	
@@ -33,9 +36,11 @@
     struct file_descriptor fdes{
         uint32_t fhash;
     }// 4 B
+```
 
 - test stub : function supported by `meta_block_area_t* dir_meta_area`
 
+```
     // global var for test 
     
     #define uint16_size 65536
@@ -55,3 +60,4 @@
         struct dir_meta_obj* dobj );
     struct dir_meta_obj* dir_meta_read_by_obj_id(
         Dir_Nat_Entry_ID_Type dobj_id );
+```
