@@ -1,29 +1,26 @@
-#ifdef DEBUG
-#undef DEBUG
-#endif
-
-#include "BTree_.h"
+#include "DirBTree.h"
+#include "DirBTree_stub.h"
 #include <stdlib.h>
 #include <time.h>
 
-#define TEST_SIZE 32
+#define RANDOM_TEST_SIZE 10240
 
 void random_test()
 {
   DirBTree bt;
   bt.init();
 
-  struct file_descriptor fdes[ TEST_SIZE ];
-  File_Nat_Entry_ID_Type mobj_id[ TEST_SIZE ];
+  struct file_descriptor fdes[ RANDOM_TEST_SIZE ];
+  File_Nat_Entry_ID_Type mobj_id[ RANDOM_TEST_SIZE ];
 
-  std::cout << "insert random " << TEST_SIZE <<std::endl;
+  std::cout << "insert random " << RANDOM_TEST_SIZE <<std::endl;
   srand(time(0));
-  for(int i=0; i<TEST_SIZE; ++i){
-    fdes[i].fhash  = rand() % 1000 + 1;
-    mobj_id[i]     = rand() % 1000 + 1;
+  for(int i=0; i<RANDOM_TEST_SIZE; ++i){
+    fdes[i].fhash  = rand() % ( RANDOM_TEST_SIZE * 1000 ) + 1;
+    mobj_id[i]     = rand() % ( RANDOM_TEST_SIZE * 1000 ) + 1;
     bt.add_new_file( fdes[i], mobj_id[i] );
-    std::cout << "insert fdes=" << fdes[i].fhash << " - " << mobj_id[i]  << std::endl;
-    bt.display();
+    //std::cout << "insert fdes=" << fdes[i].fhash << " - " << mobj_id[i]  << std::endl;
+    //bt.display();
   }
 
   std::cout << "search : " << fdes[10].fhash << " - " << mobj_id[10] << std::endl;
@@ -38,13 +35,6 @@ void random_test()
   std::cout << "insert fdes=" << fdes[2].fhash << " - " << mobj_id[2]  << std::endl;
 
   bt.display();
-}
-
-int main()
-{
-  dir_meta_init();
-
-  random_test();
 }
 
 void manual_test()
@@ -109,3 +99,12 @@ void manual_test()
     }
   }
 }
+
+int main(int argc, char*argv[])
+{
+  dir_meta_init();
+
+  random_test();
+  //manual_test();
+}
+
