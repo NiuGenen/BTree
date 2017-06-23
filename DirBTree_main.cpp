@@ -3,6 +3,50 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define AUTO_TEST_SIZE 1024
+
+bool in_set(
+    struct file_descriptor* fdeses,
+    unsigned int length,
+    struct file_descriptor fdes )
+{
+  for(int i=0; i<length; ++i)
+    if( fdeses[i].fhash == fdes.fhash ) return true;
+
+  return false;
+}
+
+void auto_test()
+{
+  DirBTree bt;
+  bt.init();
+ 
+  struct file_descriptor fdes[ AUTO_TEST_SIZE ];
+  File_Nat_Entry_ID_Type mobj_id[ AUTO_TEST_SIZE ];
+
+  srand(time(0));
+  for(int i = 0; i<AUTO_TEST_SIZE; ++i){
+    fdes[i].fhash  = rand() % ( AUTO_TEST_SIZE * 1000 ) + 1;
+    while( in_set( fdes, i, fdes[i] ) )
+        fdes[i].fhash = rand() % ( AUTO_TEST_SIZE * 1000 ) + 1;
+    mobj_id[i]     = rand() % ( AUTO_TEST_SIZE * 1000 ) + 1;
+    bt.add_new_file( fdes[i], mobj_id[i] );
+    if( !bt.verify() ) { bt.display(); return; }
+  }
+
+  bool verify = true;
+
+  std::cout << "verify result = " << ( (verify=bt.verify()) ?"True":"False") << std::endl;
+  if( !verify ) bt.display();
+
+  for(int i = 0; i< ( AUTO_TEST_SIZE / 50 ); ++i){
+    bt.del_file( fdes[ rand() % AUTO_TEST_SIZE ] ) ;
+  }
+  
+  std::cout << "verify result = " << ( (verify=bt.verify()) ?"True":"False") << std::endl;
+  if( !verify ) bt.display();
+}
+
 #define RANDOM_TEST_SIZE 10240
 
 void random_test()
@@ -104,7 +148,8 @@ int main(int argc, char*argv[])
 {
   dir_meta_init();
 
-  random_test();
+  //random_test();
   //manual_test();
+  auto_test();
 }
 

@@ -41,29 +41,46 @@ class DirBTree{
     // bool modify_file(struct file_descriptor fdes, File_Nat_Entry_ID_Type n_mobj_id);
     File_Nat_Entry_ID_Type get_file_meta_obj_id(struct file_descriptor fdes);
     void display();
+    bool verify();
 
     private:
     int root_dir_node_id;
     //int node_degree;
-    void insert_not_full(struct dir_meta_obj* dobj, 
+    void insert_not_full(
+        struct dir_meta_obj* dobj, 
         Dir_Nat_Entry_ID_Type dobj_id,
         struct file_descriptor fdes, 
         File_Nat_Entry_ID_Type mobj_id);
-    void split_child(struct dir_meta_obj* dobj_parent,
+
+    void split_child(
+        struct dir_meta_obj* dobj_parent,
         Dir_Nat_Entry_ID_Type dobj_parent_id,
         int index,
         struct dir_meta_obj* dobj_child,
         Dir_Nat_Entry_ID_Type dobj_child_id);
-    void print_dir_node(struct dir_meta_obj* dobj,
+
+    void print_dir_node(
+        struct dir_meta_obj* dobj,
         Dir_Nat_Entry_ID_Type dobj_id,
         int print_child);
-    void delete_not_half(struct dir_meta_obj* dobj,
+
+    void delete_not_half(
+        struct dir_meta_obj* dobj,
         Dir_Nat_Entry_ID_Type dobj_id,
         struct file_descriptor fdes);
-    void union_child(struct dir_meta_obj* dobj_parent, Dir_Nat_Entry_ID_Type dobj_parent_id,
+
+    void union_child(
+        struct dir_meta_obj* dobj_parent, Dir_Nat_Entry_ID_Type dobj_parent_id,
         struct dir_meta_obj* dobj_left,  Dir_Nat_Entry_ID_Type dobj_left_id,
         struct dir_meta_obj* dobj_right, Dir_Nat_Entry_ID_Type dobj_right_id,
         int index);
+
+    bool verify_node(
+        struct dir_meta_obj* dobj,
+        Dir_Nat_Entry_ID_Type dobj_id,
+        struct dir_meta_obj* its_parent,
+        int index,
+        int verify_child);
 };
 
 #endif

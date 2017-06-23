@@ -54,10 +54,10 @@ void DirBTree::insert_not_full(struct dir_meta_obj* dobj,
         struct file_descriptor fdes,
         File_Nat_Entry_ID_Type mobj_id)
 {
-    int i = dobj->fcount - 1; // last index of dobj
+    int i = dobj->fcount - 1; // last index of dobj->fdes[]
 
     if( dobj->is_leaf ){ // dobj is leaf node
-        while(i >= 0 && fdes.fhash < dobj->fdes[i].fhash ){// move value to leave one place at i
+        while(i >= 0 && fdes.fhash < dobj->fdes[i].fhash ){//move to empty [i]
             dobj->fdes[i+1] = dobj->fdes[i];
             dobj->mobj_id[i+1] = dobj->mobj_id[i];
             i--;
@@ -65,7 +65,7 @@ void DirBTree::insert_not_full(struct dir_meta_obj* dobj,
         dobj->fdes[i+1] = fdes; // insert directly
         dobj->mobj_id[i+1] = mobj_id;
         dobj->fcount++;
-        dir_meta_write_by_obj_id(dobj_id, dobj); // dump by meta_area
+        dir_meta_write_by_obj_id(dobj_id, dobj); // dump by meta_block_area
     }
     else{ // not leaf node
         while( i >= 0 && fdes.fhash < dobj->fdes[i].fhash ) i--;
@@ -550,3 +550,65 @@ void DirBTree::display()
   print_dir_node( dobj, dobj_id, 1 );
 }
 
+
+
+// verify my self
+bool DirBTree::verify()
+{
+  Dir_Nat_Entry_ID_Type dobj_id = root_dir_node_id;
+  struct dir_meta_obj* dobj = dir_meta_read_by_obj_id( dobj_id );
+
+  if( !verify_node( dobj, dobj_id, nullptr, 0, 1 ) ) return false;
+  
+  return true;
+}
+
+bool DirBTree::verify_node(struct dir_meta_obj* dobj,
+    Dir_Nat_Entry_ID_Type dobj_id,
+    struct dir_meta_obj* its_father,
+    int index, int verify_child)
+{
+  if( dobj == nullptr ){
+    std::cout << " dobj == nullptr {" << dobj_id << "}" << std::endl;
+    return false;
+  }
+
+  if( its_father != nullptr && dobj->fcount < Dir_Node_Half_Degree ){
+    std::cout << " size less than half {" << dobj_id << "}" << std::endl;
+    return false;
+  }
+  if( its_father != nullptr && dobj->fcount > Dir_Node_Degree ){
+    std::cout << " size more than degree {" << dobj_id << "}" << std::endl;
+    return false;
+  }
+
+  for(int i=0; i<dobj->fcount-1; ++i){
+    if(dobj->fdes[i].fhash > dobj->fdes[i+1].fhash){
+      std::cout << " values not sorted inner node {" << dobj_id << "}" << std::endl;
+      return false;
+    }
+  }
+
+  if( its_father != nullptr ){
+    if( index > 0 &&
+      dobj->fdes[0].fhash < its_father->fdes[ index - 1 ].fhash){
+      std::cout << " values[0] less than left {" << dobj_id << "}" << std::endl;
+      return false;
+    }
+    if( index < its_father->fcount &&
+      dobj->fdes[ dobj->fcount - 1 ].fhash > its_father->fdes[ index ].fhash){
+      std::cout << " values[fcount-1] more than right {" << dobj_id << "}" << std::endl;
+      return false;
+    }
+  }
+
+  if( verify_child && !dobj->is_leaf ){
+    struct dir_meta_obj* obj = nullptr;
+    for(int i = 0; i <= dobj->fcount; ++i){
+      obj = dir_meta_read_by_obj_id( dobj->cobj_id[ i ] );
+      if( !verify_node( obj, dobj->cobj_id[i], dobj, i, 1 ) ) return false;
+    }
+  }
+
+  return true; 
+}
