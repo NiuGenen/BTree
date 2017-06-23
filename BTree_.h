@@ -3,6 +3,8 @@
 // Entry_content :  node_obj_inner_address 16b = 4b + 9b + 2b + 1b
 #include<iostream>
 
+//#define DEBUG
+
 typedef int File_Nat_Entry_ID_Type;
 typedef int dir_meta_number_t;
 typedef dir_meta_number_t Dir_Nat_Entry_ID_Type;
@@ -35,9 +37,9 @@ struct file_descriptor{
 //                 /  /  / ... / \
 // cobj_id[] =  { 0, 1, 2 ... n, n+1 }
 struct dir_meta_obj{    // node
-    struct file_descriptor  fdes       [ Dir_Leaf_Node_Degree ];        // 400 * 4 B = 1600 B 
-    File_Nat_Entry_ID_Type  mobj_id    [ Dir_Leaf_Node_Degree ];        // 400 * 4 B = 1600 B
-    Dir_Nat_Entry_ID_Type   cobj_id    [ Dir_Leaf_Node_Degree + 1 ];    // 401 * 2 B =  802 B
+    struct file_descriptor  fdes       [ Dir_Leaf_Node_Degree + 1];        // 400 * 4 B = 1600 B 
+    File_Nat_Entry_ID_Type  mobj_id    [ Dir_Leaf_Node_Degree + 1];        // 400 * 4 B = 1600 B
+    Dir_Nat_Entry_ID_Type   cobj_id    [ Dir_Leaf_Node_Degree + 1 + 1 ];    // 401 * 2 B =  802 B
     Dir_Nat_Entry_ID_Type   father_id;                                  // 2 B
     uint32_t                is_leaf;                                    // 4 B
     dir_meta_number_t       fcount;                                     // 4 B
@@ -70,7 +72,7 @@ class DirBTree{
     void print_dir_node(struct dir_meta_obj* dobj,
         Dir_Nat_Entry_ID_Type dobj_id,
         int print_child);
-    void delete_not_half(strucy dir_meta_obj* dobj,
+    void delete_not_half(struct dir_meta_obj* dobj,
         Dir_Nat_Entry_ID_Type dobj_id,
         struct file_descriptor fdes);
     void union_child(struct dir_meta_obj* obj_parent, Dir_Nat_Entry_ID_Type obj_parent_id,

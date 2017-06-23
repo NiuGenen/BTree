@@ -1,0 +1,171 @@
+insert random 32
+insert fdes=428 - 404
+insert fdes=99 - 669
+insert fdes=893 - 664
+insert fdes=427 - 772
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=184 - 742
+insert fdes=700 - 641
+insert fdes=515 - 401
+insert fdes=180 - 767
+insert fdes=824 - 575
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=759 - 287
+insert fdes=910 - 345
+insert fdes=433 - 282
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=217 - 8
+insert fdes=296 - 386
+insert fdes=331 - 303
+[DEBUG] in split_child : index = 3
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=338 - 758
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=706 - 437
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=779 - 950
+insert fdes=452 - 205
+insert fdes=74 - 987
+insert fdes=298 - 773
+[DEBUG] in split_child : index = 2
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=627 - 164
+insert fdes=525 - 807
+insert fdes=931 - 700
+[DEBUG] in split_child : index = 3
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=733 - 41
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=986 - 994
+insert fdes=737 - 770
+insert fdes=275 - 953
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=777 - 923
+insert fdes=338 - 107
+[DEBUG] in split_child : index = 2
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=225 - 28
+insert fdes=217 - 282
+dobj{ 6 } = iner_node [ 2 ] :  ( 0 , 0 ) ( 452 , 205 )
+       child: [1][7][11]
+dobj{ 1 } = iner_node [ 2 ] :  ( 184 , 742 ) ( 428 , 404 )
+       child: [0][4][2]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 99 , 669 ) ( 180 , 767 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 217 , 8 ) ( 427 , 772 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 433 , 282 ) ( 515 , 401 ) ( 700 , 641 ) ( 759 , 287 )
+dobj{ 7 } = iner_node [ 3 ] :  ( 338 , 758 ) ( 0 , 0 ) ( 298 , 773 )
+       child: [3][8][5][13]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 296 , 386 ) ( 331 , 303 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 706 , 437 ) ( 779 , 950 )
+dobj{ 5 } = leaf_node [ 4 ] :  ( 74 , 987 ) ( 217 , 282 ) ( 225 , 28 ) ( 275 , 953 )
+dobj{ 13 } = leaf_node [ 1 ] :  ( 338 , 107 )
+dobj{ 11 } = iner_node [ 2 ] :  ( 733 , 41 ) ( 0 , 0 )
+       child: [9][12][10]
+dobj{ 9 } = leaf_node [ 2 ] :  ( 525 , 807 ) ( 627 , 164 )
+dobj{ 12 } = leaf_node [ 2 ] :  ( 737 , 770 ) ( 777 , 923 )
+dobj{ 10 } = leaf_node [ 2 ] :  ( 931 , 700 ) ( 986 , 994 )
+search : 910 - 345
+search result = 55555555
+delete fdes=428
+delete fdes=99
+delete fdes=893
+delete fdes=427
+delete fdes=184
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=893 - 664
+dobj{ 6 } = iner_node [ 2 ] :  ( 0 , 0 ) ( 452 , 205 )
+       child: [1][7][8]
+dobj{ 1 } = iner_node [ 2 ] :  ( 184 , 742 ) ( 428 , 404 )
+       child: [0][4][2]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 99 , 669 ) ( 180 , 767 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 217 , 8 ) ( 427 , 772 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 433 , 282 ) ( 515 , 401 ) ( 700 , 641 ) ( 759 , 287 )
+dobj{ 7 } = iner_node [ 2 ] :  ( 779 , 950 ) ( 225 , 28 )
+       child: [3][5][13]
+dobj{ 3 } = leaf_node [ 4 ] :  ( 296 , 386 ) ( 331 , 303 ) ( 338 , 758 ) ( 706 , 437 )
+dobj{ 5 } = leaf_node [ 3 ] :  ( 0 , 0 ) ( 74 , 987 ) ( 217 , 282 )
+dobj{ 13 } = leaf_node [ 3 ] :  ( 275 , 953 ) ( 298 , 773 ) ( 338 , 107 )
+dobj{ 8 } = iner_node [ 1 ] :  ( 733 , 41 )
+       child: [9][12]
+dobj{ 9 } = leaf_node [ 2 ] :  ( 525 , 807 ) ( 627 , 164 )
+dobj{ 12 } = leaf_node [ 6 ] :  ( 737 , 986 ) ( 777 , 923 ) ( 0 , 0 ) ( 893 , 664 ) ( 931 , 700 ) ( 986 , 994 )

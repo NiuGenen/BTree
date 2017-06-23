@@ -1,8 +1,6 @@
 #include <iostream>
 #include "BTree_.h"
 
-#define DEBUG
-
 DirBTree::~DirBTree(){
 }
 
@@ -29,7 +27,7 @@ bool DirBTree::add_new_file(struct file_descriptor fdes, File_Nat_Entry_ID_Type 
         //throw or alloc_new_id
     }
 
-    if( dobj-> fcount == Dir_Leaf_Node_Degree ){
+    if( dobj-> fcount >= Dir_Leaf_Node_Degree ){
         //split child
         Dir_Nat_Entry_ID_Type new_father_id = dir_meta_alloc_obj_id();
         struct dir_meta_obj* father_obj = dir_meta_read_by_obj_id( new_father_id );
@@ -159,7 +157,7 @@ void DirBTree::split_child(struct dir_meta_obj* dobj_parent,
     std::cout << "[DEBUG] in split_child : ready to move parent" << std::endl;
 #endif
     // move parent->fdes [ index , fcount - 1 ] one step back
-    for(int i = dobj_parent->fcount - 1 - 1; i >= index ; i--){
+    for(int i = dobj_parent->fcount - 1; i >= index ; --i){
         dobj_parent->fdes[ i + 1 ] = dobj_parent->fdes[ i ];
         dobj_parent->mobj_id[ i + 1 ] = dobj_parent->mobj_id[ i ];
     }
@@ -190,6 +188,7 @@ void DirBTree::split_child(struct dir_meta_obj* dobj_parent,
 File_Nat_Entry_ID_Type DirBTree::get_file_meta_obj_id(
     struct file_descriptor fdes)
 {
+    Dir_Nat_Entry_ID_Type dobj_id = root_dir_node_id;
     struct dir_meta_obj* dobj = dir_meta_read_by_obj_id( root_dir_node_id );
     if( dobj == nullptr ){
         //throw
@@ -203,19 +202,23 @@ DirBTree_get_restart:
         if( dobj->fdes[i].fhash > fdes.fhash ){
             if( dobj->is_leaf ){
                 // not found
+                return 55555555;
             }
             else{
-                Dir_Nat_Entry_ID_Type dobj_id = dobj->cobj_id[i];
+                dobj_id = dobj->cobj_id[i];
                 dobj = dir_meta_read_by_obj_id( dobj_id );
                 goto DirBTree_get_restart;
             }
         }
     }
-    Dir_Nat_Entry_ID_Type dobj_id = dobj->cobj_id[ dobj->fcount + 1 ];
-    dobj = dir_meta_read_by_obj_id( dobj_id );
-    goto DirBTree_get_restart;
+    if( !dobj->is_leaf ){
+        dobj_id = dobj->cobj_id[ dobj->fcount ];
+        dobj = dir_meta_read_by_obj_id( dobj_id );
+        goto DirBTree_get_restart;
+    }
 
     //not found
+    return 55555555;
 }
 
 
@@ -238,14 +241,14 @@ bool DirBTree::del_file(struct file_descriptor fdes)
     delete_not_half( dobj, dobj_id, fdes);
 }
 
-void delete_not_half(strucy dir_meta_obj* dobj,
+void DirBTree::delete_not_half(struct dir_meta_obj* dobj,
         Dir_Nat_Entry_ID_Type dobj_id,
         struct file_descriptor fdes)
 {
     int index = 0;
     while(index < dobj->fcount && fdes.fhash > dobj->fdes[index].fhash){
         index++;
-    }//locate index : fdes.fhash <= dobj->fdes[index].fhash
+    }// index : fdes.fhash <= dobj->fdes[index].fhash
 
     // leaf node
     // delete it directly
@@ -257,10 +260,11 @@ void delete_not_half(strucy dir_meta_obj* dobj,
             }
             dobj->fcount--;
             dir_meta_write_by_obj_id( dobj_id, dobj );
-            return;//directly delete
+            return ;//directly delete
         }
         else{
             // not found this fdes
+            return ;
         }
     }
     // dobj has child
@@ -274,7 +278,7 @@ void delete_not_half(strucy dir_meta_obj* dobj,
         if( left_child_obj->fcount > Dir_Leaf_Node_Half_Degree ){
             dobj->fdes[index] = left_child_obj->fdes[ left_child_obj->fcount - 1 ];
             dobj->mobj_id[index] = left_child_obj->mobj_id[ left_child_obj->fcount - 1];
-            dir_meta_write_by_obj_id( dobj_id, dobj );
+            dir_meta_write_by_obj_id( dobj_id, dobj );  // write parent
             delete_not_half( left_child_obj, left_child_obj_id, 
                 left_child_obj->fdes[ left_child_obj->fcount - 1 ] );
             return;
@@ -337,7 +341,31 @@ void delete_not_half(strucy dir_meta_obj* dobj,
                 left_brother_cobj_id = dobj->cobj_id[ index - 1 ];
                 left_brother_cobj = dir_meta_read_by_obj_id( left_brother_cobj_id );
                 if( left_brother_cobj->fcount > Dir_Leaf_Node_Half_Degree ){// OK to brorrow
-                    // brorrow from left brother and delete
+                    // brorrow from left brother and delete from child
+                    for(int i = cobj->fcount - 1; i >= 0; --i){
+                        cobj->fdes[ i + 1 ]    = cobj->fdes[ i ];
+                        cobj->mobj_id[ i + 1 ] = cobj->mobj_id[ i ];
+                    }
+                    for(int i = cobj->fcount; i >= 0; --i){
+                        cobj->cobj_id[ i + 1 ] = cobj->cobj_id[ i ];
+                    }
+
+                    struct file_descriptor dobj_saved_fdes   = dobj->fdes[ index - 1 ];
+                    Dir_Nat_Entry_ID_Type dobj_saved_mobj_id = dobj->mobj_id[ index - 1 ];
+
+                    dobj->fdes[ index - 1 ]    = left_brother_cobj->fdes[ left_brother_cobj->fcount - 1];
+                    dobj->mobj_id[ index - 1 ] = left_brother_cobj->mobj_id[ left_brother_cobj->fcount - 1];
+
+                    cobj->fdes[ 0 ]    = dobj_saved_fdes;
+                    cobj->mobj_id[ 0 ] = dobj_saved_mobj_id;
+                    cobj->cobj_id[ 0 ] = left_brother_cobj->cobj_id[ left_brother_cobj->fcount];
+                    cobj->fcount += 1;
+
+                    left_brother_cobj->fcount -= 1;
+
+                    dir_meta_write_by_obj_id( left_brother_cobj_id, left_brother_cobj );
+                    dir_meta_write_by_obj_id( dobj_id, dobj );
+                    delete_not_half( cobj, cobj_id, fdes );
                     return;
                 }
             }
@@ -347,6 +375,29 @@ void delete_not_half(strucy dir_meta_obj* dobj,
                 right_brother_cobj = dir_meta_read_by_obj_id( right_brother_cobj_id );
                 if( right_brother_cobj->fcount > Dir_Leaf_Node_Half_Degree ){// OK to brorrow
                     // brorrow from left brother and delete
+                    struct file_descriptor dobj_saved_fdes   = dobj->fdes[ index ];
+                    Dir_Nat_Entry_ID_Type dobj_saved_mobj_id = dobj->mobj_id[ index ];
+
+                    dobj->fdes[ index ]    = right_brother_cobj->fdes[ 0 ];
+                    dobj->mobj_id[ index ] = right_brother_cobj->mobj_id[ 0 ];
+
+                    cobj->fdes[ cobj->fcount ]    = dobj_saved_fdes;
+                    cobj->mobj_id[ cobj->fcount ] = dobj_saved_mobj_id;
+                    cobj->cobj_id[ cobj->fcount + 1 ] = right_brother_cobj->cobj_id[ 0 ];
+                    cobj->fcount += 1;
+
+                    for(int i = 0; i < right_brother_cobj->fcount - 1; ++i){
+                        right_brother_cobj->fdes[ i ]    = right_brother_cobj->fdes[ i + 1 ];
+                        right_brother_cobj->mobj_id[ i ] = right_brother_cobj->mobj_id[ i + 1 ];
+                    }
+                    for(int i = 0; i < right_brother_cobj->fcount; ++i){
+                        right_brother_cobj->cobj_id[ i ] = right_brother_cobj->cobj_id[ i + 1 ];
+                    }
+                    right_brother_cobj->fcount -= 1;
+
+                    dir_meta_write_by_obj_id( right_brother_cobj_id, right_brother_cobj );
+                    dir_meta_write_by_obj_id( dobj_id, dobj );
+                    delete_not_half( cobj, cobj_id, fdes );
                     return;
                 }
             }
@@ -408,7 +459,7 @@ void delete_not_half(strucy dir_meta_obj* dobj,
 // step 5. if parent->fcount == 0 : change root
 // step 6. return left_child ===> for delete by fdes
 // NO need setp 6 : useless without its id
-void union_child(
+void DirBTree::union_child(
     struct dir_meta_obj* dobj_parent, Dir_Nat_Entry_ID_Type dobj_parent_id,
     struct dir_meta_obj* dobj_left,  Dir_Nat_Entry_ID_Type dobj_left_id,    // left_id  == parent->cobj_id[ index ]
     struct dir_meta_obj* dobj_right, Dir_Nat_Entry_ID_Type dobj_right_id,   // right_id == parent-<cobj_id[ index+1 ]
@@ -429,8 +480,8 @@ void union_child(
     //              /      \        ==>      /      \    /    \
     //   cobj = fcount-1  fcount         fcount-1  fcount    nullptr 
     //
-    dobj_left->fdes[ obj_left->fcount ]    = dobj_parent->fdes[ index ];
-    dobj_left->mobj_id[ obj_left->fcount ] = dobj_parent->mobj_id[ index ];
+    dobj_left->fdes[ dobj_left->fcount ]    = dobj_parent->fdes[ index ];
+    dobj_left->mobj_id[ dobj_left->fcount ] = dobj_parent->mobj_id[ index ];
     for(int i = index; i < dobj_parent->fcount - 1; ++i){
         dobj_parent->fdes[ i ]    = dobj_parent->fdes[ i + 1];
         dobj_parent->mobj_id[ i ] = dobj_parent->mobj_id[ i + 1];
@@ -461,7 +512,7 @@ void union_child(
     dobj_left->fcount += dobj_right->fcount + 1;
 
     // step 3. write parent
-    dir_meta_write_by_obj_id( dobj_parent_id, dobj_parent_id );
+    dir_meta_write_by_obj_id( dobj_parent_id, dobj_parent );
 
     // step 4. dealloc right
     dir_meta_dealloc_obj_id( dobj_right_id );
@@ -507,7 +558,7 @@ void DirBTree::print_dir_node( struct dir_meta_obj* dobj, Dir_Nat_Entry_ID_Type 
         for(int i = 0; i <= dobj->fcount; ++i){
         Dir_Nat_Entry_ID_Type id = dobj->cobj_id[i];
         struct dir_meta_obj* obj = dir_meta_read_by_obj_id( id );
-        print_dir_node( obj, id );
+        print_dir_node( obj, id , 1);
         }
     }
   }

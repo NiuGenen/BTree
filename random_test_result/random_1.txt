@@ -1,0 +1,162 @@
+insert random 32
+insert fdes=550160254 - 1860975006
+insert fdes=319107536 - 1266940061
+insert fdes=1215265270 - 76657196
+insert fdes=1755756741 - 1383547319
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1345535768 - 881880230
+insert fdes=886807684 - 1973876549
+insert fdes=1883237595 - 598292825
+insert fdes=1847302315 - 138875527
+insert fdes=1068356233 - 1112473029
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1605583688 - 565125894
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=759370766 - 933190220
+insert fdes=67716019 - 1053565259
+insert fdes=1252782728 - 1272592399
+insert fdes=1878866672 - 254589027
+[DEBUG] in split_child : index = 3
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1946434318 - 2012659527
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1354399596 - 349110924
+insert fdes=1726150886 - 1673507132
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1616050985 - 793932508
+insert fdes=1750164328 - 1224324078
+insert fdes=29996179 - 948216448
+[DEBUG] in split_child : index = 2
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=2106204308 - 916803864
+insert fdes=774609349 - 1841958255
+insert fdes=1515096689 - 474428017
+insert fdes=1980833782 - 435969274
+[DEBUG] in split_child : index = 2
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1586901046 - 1438933823
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1001095169 - 198788164
+insert fdes=224640395 - 1068811188
+[DEBUG] in split_child : index = 2
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1252353424 - 1477423123
+insert fdes=193919940 - 983736448
+insert fdes=1732012150 - 2140354258
+insert fdes=848912327 - 938928098
+insert fdes=341981534 - 427579565
+dobj{ 6 } = iner_node [ 2 ] :  ( 0 , 0 ) ( 1515096689 , 474428017 )
+       child: [1][7][11]
+dobj{ 1 } = iner_node [ 2 ] :  ( 886807684 , 1973876549 ) ( 1215265270 , 76657196 )
+       child: [0][4][2]
+dobj{ 0 } = leaf_node [ 3 ] :  ( 319107536 , 1266940061 ) ( 550160254 , 1860975006 ) ( 759370766 , 933190220 )
+dobj{ 4 } = leaf_node [ 1 ] :  ( 1068356233 , 1112473029 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 1345535768 , 881880230 ) ( 1605583688 , 565125894 ) ( 1755756741 , 1383547319 )
+dobj{ 7 } = iner_node [ 3 ] :  ( 1354399596 , 349110924 ) ( 0 , 0 ) ( 774609349 , 1841958255 )
+       child: [3][8][5][12]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 67716019 , 1053565259 ) ( 1252782728 , 1272592399 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 1616050985 , 793932508 ) ( 1726150886 , 1673507132 )
+dobj{ 5 } = leaf_node [ 4 ] :  ( 29996179 , 948216448 ) ( 193919940 , 983736448 ) ( 224640395 , 1068811188 ) ( 341981534 , 427579565 )
+dobj{ 12 } = leaf_node [ 3 ] :  ( 848912327 , 938928098 ) ( 1001095169 , 198788164 ) ( 1252353424 , 1477423123 )
+dobj{ 11 } = iner_node [ 1 ] :  ( 0 , 0 )
+       child: [10][9]
+dobj{ 10 } = leaf_node [ 2 ] :  ( 1586901046 , 1438933823 ) ( 1750164328 , 1224324078 )
+dobj{ 9 } = leaf_node [ 4 ] :  ( 1732012150 , 2140354258 ) ( 1946434318 , 2012659527 ) ( 1980833782 , 435969274 ) ( 2106204308 , 916803864 )
+search : 759370766 - 933190220
+search result = 55555555
+delete fdes=550160254
+delete fdes=319107536
+delete fdes=1215265270
+delete fdes=1755756741
+delete fdes=1345535768
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=1215265270 - 76657196
+dobj{ 6 } = iner_node [ 2 ] :  ( 0 , 0 ) ( 1515096689 , 474428017 )
+       child: [1][7][8]
+dobj{ 1 } = iner_node [ 2 ] :  ( 886807684 , 1973876549 ) ( 1215265270 , 76657196 )
+       child: [0][4][2]
+dobj{ 0 } = leaf_node [ 3 ] :  ( 319107536 , 1266940061 ) ( 550160254 , 1860975006 ) ( 759370766 , 933190220 )
+dobj{ 4 } = leaf_node [ 1 ] :  ( 1068356233 , 1112473029 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 1345535768 , 881880230 ) ( 1605583688 , 565125894 ) ( 1755756741 , 1383547319 )
+dobj{ 7 } = iner_node [ 2 ] :  ( 0 , 0 ) ( 774609349 , 1841958255 )
+       child: [3][5][12]
+dobj{ 3 } = leaf_node [ 5 ] :  ( 67716019 , 1053565259 ) ( 1252782728 , 1272592399 ) ( 1354399596 , 349110924 ) ( 1616050985 , 793932508 ) ( 1726150886 , 1673507132 )
+dobj{ 5 } = leaf_node [ 4 ] :  ( 29996179 , 948216448 ) ( 193919940 , 983736448 ) ( 224640395 , 1068811188 ) ( 341981534 , 427579565 )
+dobj{ 12 } = leaf_node [ 4 ] :  ( 848912327 , 938928098 ) ( 1001095169 , 198788164 ) ( 1215265270 , 76657196 ) ( 1252353424 , 1477423123 )
+dobj{ 8 } = iner_node [ 1 ] :  ( 0 , 0 )
+       child: [10][9]
+dobj{ 10 } = leaf_node [ 2 ] :  ( 1586901046 , 1438933823 ) ( 1750164328 , 1224324078 )
+dobj{ 9 } = leaf_node [ 4 ] :  ( 1732012150 , 2140354258 ) ( 1946434318 , 2012659527 ) ( 1980833782 , 435969274 ) ( 2106204308 , 916803864 )

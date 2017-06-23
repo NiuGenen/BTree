@@ -1,0 +1,432 @@
+insert random 32
+insert fdes=886 - 197
+dobj{ 0 } = leaf_node [ 1 ] :  ( 886 , 197 )
+insert fdes=171 - 158
+dobj{ 0 } = leaf_node [ 2 ] :  ( 171 , 158 ) ( 886 , 197 )
+insert fdes=244 - 27
+dobj{ 0 } = leaf_node [ 3 ] :  ( 171 , 158 ) ( 244 , 27 ) ( 886 , 197 )
+insert fdes=67 - 546
+dobj{ 0 } = leaf_node [ 4 ] :  ( 67 , 546 ) ( 171 , 158 ) ( 244 , 27 ) ( 886 , 197 )
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=898 - 255
+dobj{ 1 } = iner_node [ 1 ] :  ( 244 , 27 )
+       child: [0][2]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 886 , 197 ) ( 898 , 255 )
+insert fdes=414 - 586
+dobj{ 1 } = iner_node [ 1 ] :  ( 244 , 27 )
+       child: [0][2]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 414 , 586 ) ( 886 , 197 ) ( 898 , 255 )
+insert fdes=724 - 250
+dobj{ 1 } = iner_node [ 1 ] :  ( 244 , 27 )
+       child: [0][2]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 414 , 586 ) ( 724 , 250 ) ( 886 , 197 ) ( 898 , 255 )
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=929 - 946
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 886 , 197 )
+       child: [0][2][3]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 414 , 586 ) ( 724 , 250 )
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 929 , 946 )
+insert fdes=915 - 664
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 886 , 197 )
+       child: [0][2][3]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 414 , 586 ) ( 724 , 250 )
+dobj{ 3 } = leaf_node [ 3 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 )
+insert fdes=443 - 325
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 886 , 197 )
+       child: [0][2][3]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 414 , 586 ) ( 443 , 325 ) ( 724 , 250 )
+dobj{ 3 } = leaf_node [ 3 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 )
+insert fdes=951 - 321
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 886 , 197 )
+       child: [0][2][3]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 414 , 586 ) ( 443 , 325 ) ( 724 , 250 )
+dobj{ 3 } = leaf_node [ 4 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 ) ( 951 , 321 )
+insert fdes=705 - 861
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 886 , 197 )
+       child: [0][2][3]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 414 , 586 ) ( 443 , 325 ) ( 705 , 861 ) ( 724 , 250 )
+dobj{ 3 } = leaf_node [ 4 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 ) ( 951 , 321 )
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=783 - 156
+dobj{ 1 } = iner_node [ 3 ] :  ( 244 , 27 ) ( 705 , 861 ) ( 886 , 197 )
+       child: [0][2][4][3]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 67 , 546 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 414 , 586 ) ( 443 , 325 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 3 } = leaf_node [ 4 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 ) ( 951 , 321 )
+insert fdes=90 - 575
+dobj{ 1 } = iner_node [ 3 ] :  ( 244 , 27 ) ( 705 , 861 ) ( 886 , 197 )
+       child: [0][2][4][3]
+dobj{ 0 } = leaf_node [ 3 ] :  ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 414 , 586 ) ( 443 , 325 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 3 } = leaf_node [ 4 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 ) ( 951 , 321 )
+insert fdes=51 - 768
+dobj{ 1 } = iner_node [ 3 ] :  ( 244 , 27 ) ( 705 , 861 ) ( 886 , 197 )
+       child: [0][2][4][3]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 414 , 586 ) ( 443 , 325 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 3 } = leaf_node [ 4 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 929 , 946 ) ( 951 , 321 )
+[DEBUG] in split_child : index = 3
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=932 - 288
+dobj{ 1 } = iner_node [ 4 ] :  ( 244 , 27 ) ( 705 , 861 ) ( 886 , 197 ) ( 929 , 946 )
+       child: [0][2][4][3][5]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 414 , 586 ) ( 443 , 325 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=316 - 102
+dobj{ 6 } = iner_node [ 1 ] :  ( 886 , 197 )
+       child: [1][7]
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 705 , 861 )
+       child: [0][2][4]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 316 , 102 ) ( 414 , 586 ) ( 443 , 325 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=445 - 560
+dobj{ 6 } = iner_node [ 1 ] :  ( 886 , 197 )
+       child: [1][7]
+dobj{ 1 } = iner_node [ 2 ] :  ( 244 , 27 ) ( 705 , 861 )
+       child: [0][2][4]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 316 , 102 ) ( 414 , 586 ) ( 443 , 325 ) ( 445 , 560 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+[DEBUG] in split_child : index = 1
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=480 - 863
+dobj{ 6 } = iner_node [ 1 ] :  ( 886 , 197 )
+       child: [1][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 244 , 27 ) ( 443 , 325 ) ( 705 , 861 )
+       child: [0][2][8][4]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 480 , 863 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=457 - 729
+dobj{ 6 } = iner_node [ 1 ] :  ( 886 , 197 )
+       child: [1][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 244 , 27 ) ( 443 , 325 ) ( 705 , 861 )
+       child: [0][2][8][4]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 3 ] :  ( 445 , 560 ) ( 457 , 729 ) ( 480 , 863 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=470 - 870
+dobj{ 6 } = iner_node [ 1 ] :  ( 886 , 197 )
+       child: [1][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 244 , 27 ) ( 443 , 325 ) ( 705 , 861 )
+       child: [0][2][8][4]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 4 ] :  ( 445 , 560 ) ( 457 , 729 ) ( 470 , 870 ) ( 480 , 863 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+[DEBUG] in split_child : index = 2
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=666 - 193
+dobj{ 6 } = iner_node [ 1 ] :  ( 886 , 197 )
+       child: [1][7]
+dobj{ 1 } = iner_node [ 4 ] :  ( 244 , 27 ) ( 443 , 325 ) ( 470 , 870 ) ( 705 , 861 )
+       child: [0][2][8][9][4]
+dobj{ 0 } = leaf_node [ 4 ] :  ( 51 , 768 ) ( 67 , 546 ) ( 90 , 575 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 9 } = leaf_node [ 2 ] :  ( 480 , 863 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=119 - 594
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 2 ] :  ( 119 , 594 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 2 ] :  ( 480 , 863 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=138 - 386
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 2 ] :  ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 2 ] :  ( 480 , 863 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=257 - 932
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 257 , 932 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 2 ] :  ( 480 , 863 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 2 ] :  ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=710 - 559
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 257 , 932 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 2 ] :  ( 480 , 863 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 3 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=605 - 766
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 257 , 932 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 3 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 3 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=771 - 739
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 257 , 932 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 3 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 4 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 771 , 739 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 2 ] :  ( 898 , 255 ) ( 915 , 664 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=921 - 213
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 257 , 932 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 3 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 4 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 771 , 739 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 3 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 921 , 213 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=314 - 323
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 257 , 932 ) ( 314 , 323 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 3 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 4 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 771 , 739 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 3 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 921 , 213 )
+dobj{ 5 } = leaf_node [ 2 ] :  ( 932 , 288 ) ( 951 , 321 )
+insert fdes=980 - 597
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 257 , 932 ) ( 314 , 323 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 3 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 4 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 771 , 739 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 3 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 921 , 213 )
+dobj{ 5 } = leaf_node [ 3 ] :  ( 932 , 288 ) ( 951 , 321 ) ( 980 , 597 )
+insert fdes=610 - 295
+dobj{ 6 } = iner_node [ 2 ] :  ( 470 , 870 ) ( 886 , 197 )
+       child: [1][10][7]
+dobj{ 1 } = iner_node [ 3 ] :  ( 90 , 575 ) ( 244 , 27 ) ( 443 , 325 )
+       child: [0][11][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 67 , 546 )
+dobj{ 11 } = leaf_node [ 3 ] :  ( 119 , 594 ) ( 138 , 386 ) ( 171 , 158 )
+dobj{ 2 } = leaf_node [ 4 ] :  ( 257 , 932 ) ( 314 , 323 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 1 ] :  ( 705 , 861 )
+       child: [9][4]
+dobj{ 9 } = leaf_node [ 4 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 610 , 295 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 4 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 771 , 739 ) ( 783 , 156 )
+dobj{ 7 } = iner_node [ 1 ] :  ( 929 , 946 )
+       child: [3][5]
+dobj{ 3 } = leaf_node [ 3 ] :  ( 898 , 255 ) ( 915 , 664 ) ( 921 , 213 )
+dobj{ 5 } = leaf_node [ 3 ] :  ( 932 , 288 ) ( 951 , 321 ) ( 980 , 597 )
+search : 951 - 321
+search result = 321
+delete fdes=886
+delete fdes=171
+delete fdes=244
+delete fdes=67
+delete fdes=898
+[DEBUG] in split_child : index = 0
+[DEBUG] in split_child : ready to alloc n_child
+[DEBUG] in split_child : finish to alloc n_child
+[DEBUG] in split_child : ready to build n_child
+[DEBUG] in split_child : finish to build n_child
+[DEBUG] in split_child : ready to move parent
+[DEBUG] in split_child : finish to move parent's fdes & mobj_id
+[DEBUG] in split_child : finish to move parent's cobj_id
+insert fdes=244 - 27
+dobj{ 6 } = iner_node [ 1 ] :  ( 470 , 870 )
+       child: [1][10]
+dobj{ 1 } = iner_node [ 3 ] :  ( 119 , 594 ) ( 257 , 932 ) ( 443 , 325 )
+       child: [0][7][2][8]
+dobj{ 0 } = leaf_node [ 2 ] :  ( 51 , 768 ) ( 90 , 575 )
+dobj{ 7 } = leaf_node [ 2 ] :  ( 138 , 386 ) ( 244 , 27 )
+dobj{ 2 } = leaf_node [ 3 ] :  ( 314 , 323 ) ( 316 , 102 ) ( 414 , 586 )
+dobj{ 8 } = leaf_node [ 2 ] :  ( 445 , 560 ) ( 457 , 729 )
+dobj{ 10 } = iner_node [ 3 ] :  ( 705 , 861 ) ( 783 , 156 ) ( 929 , 946 )
+       child: [9][4][3][5]
+dobj{ 9 } = leaf_node [ 4 ] :  ( 480 , 863 ) ( 605 , 766 ) ( 610 , 295 ) ( 666 , 193 )
+dobj{ 4 } = leaf_node [ 3 ] :  ( 710 , 559 ) ( 724 , 250 ) ( 771 , 739 )
+dobj{ 3 } = leaf_node [ 2 ] :  ( 915 , 664 ) ( 921 , 213 )
+dobj{ 5 } = leaf_node [ 3 ] :  ( 932 , 288 ) ( 951 , 321 ) ( 980 , 597 )
