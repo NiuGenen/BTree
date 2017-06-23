@@ -4,7 +4,7 @@
 
 - class DirBTree : btree for `struct dir_meta_obj`
 
-	# public interface of DirBTree
+	// public interface of DirBTree
 	
 	void init();
 	bool add_new_file(
@@ -36,14 +36,14 @@
 
 - test stub : function supported by `meta_block_area_t* dir_meta_area`
 
-	# global var for test 
+	// global var for test 
 
 	#define uint16_size 65536
 	dir_meta_number_t dir_obj_id_table[ uint16_size ];
 	char dir_obj_table_use[ uint16_size ];
 	struct dir_meta_obj* dir_obj_table[ uint16_size ];
 
-	# function
+	// function
 
 	void dir_meta_init();	// obly for test
 	// public interface of meta_block_area_t* dir_meta_mba
