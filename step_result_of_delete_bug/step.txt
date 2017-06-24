@@ -1,0 +1,4 @@
+
+ === delete fdes[18] = 106331
+
+ values[0] less than left {48}

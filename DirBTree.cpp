@@ -253,27 +253,29 @@ void DirBTree::delete_not_half(struct dir_meta_obj* dobj,
     // maybe : union_child
     else if( index < dobj->fcount && fdes.fhash == dobj->fdes[index].fhash ){
         // move left_child[max] to parent[index]
-        // delete left_child[max]
+        // delete left_child[max] // NOT left_child[max] BUT MAX() of left_child
         Dir_Nat_Entry_ID_Type left_child_obj_id = dobj->cobj_id[ index ];
         struct dir_meta_obj* left_child_obj = dir_meta_read_by_obj_id( left_child_obj_id );
         if( left_child_obj->fcount > Dir_Node_Half_Degree ){
-            dobj->fdes[index] = left_child_obj->fdes[ left_child_obj->fcount - 1 ];
-            dobj->mobj_id[index] = left_child_obj->mobj_id[ left_child_obj->fcount - 1];
+            //dobj->fdes[index] = left_child_obj->fdes[ left_child_obj->fcount - 1 ];
+            //dobj->mobj_id[index] = left_child_obj->mobj_id[ left_child_obj->fcount - 1];
+            max_of_dobj( left_child_obj, left_child_obj_id,
+                &(dobj->fdes[index]), &(dobj->mobj_id[index]) );
             dir_meta_write_by_obj_id( dobj_id, dobj );  // write parent
-            delete_not_half( left_child_obj, left_child_obj_id, 
-                left_child_obj->fdes[ left_child_obj->fcount - 1 ] );
+            delete_not_half( left_child_obj, left_child_obj_id, dobj->fdes[ index ] );
             return;
         }
         // move right_child[min] to parent[index]
-        // delete right_child[min]
+        // delete right_child[min] // NOT [min] BUT MIN() of right_child
         Dir_Nat_Entry_ID_Type right_child_obj_id = dobj->cobj_id[ index + 1 ];
         struct dir_meta_obj* right_child_obj = dir_meta_read_by_obj_id( right_child_obj_id );
         if( right_child_obj->fcount > Dir_Node_Half_Degree ){
-            dobj->fdes[index] = right_child_obj->fdes[ 0 ];
-            dobj->mobj_id[index] = right_child_obj->mobj_id[ 0 ];
+            //dobj->fdes[index] = right_child_obj->fdes[ 0 ];
+            //dobj->mobj_id[index] = right_child_obj->mobj_id[ 0 ];
+            min_of_dobj( right_child_obj, right_child_obj_id,
+                &(dobj->fdes[index]), &(dobj->mobj_id[index]) );
             dir_meta_write_by_obj_id( dobj_id, dobj );
-            delete_not_half( right_child_obj, right_child_obj_id, 
-                right_child_obj->fdes[ 0 ] );
+            delete_not_half( right_child_obj, right_child_obj_id, dobj->fdes[ index ] );
             return;
         }
         //
@@ -500,7 +502,29 @@ void DirBTree::union_child(
     }
 }
 
+// get the max/min fdes of dobj
+// go through all the child dobj
+void DirBTree::max_of_dobj(struct dir_meta_obj* dobj, Dir_Nat_Entry_ID_Type dobj_id, struct file_descriptor* max_fdes, File_Nat_Entry_ID_Type * max_mobj_id)
+{
+  while( !dobj->is_leaf ){
+    dobj_id = dobj->cobj_id[ dobj->fcount ];
+    dobj = dir_meta_read_by_obj_id( dobj_id );
+  }
+  *max_fdes    = dobj->fdes[ dobj->fcount - 1 ];
+  *max_mobj_id = dobj->mobj_id[ dobj->fcount - 1];
+  return;
+}
 
+void DirBTree::min_of_dobj(struct dir_meta_obj* dobj, Dir_Nat_Entry_ID_Type dobj_id, struct file_descriptor* min_fdes, File_Nat_Entry_ID_Type * min_mobj_id)
+{
+  while( !dobj->is_leaf ){
+    dobj_id = dobj->cobj_id[ 0 ];
+    dobj = dir_meta_read_by_obj_id( dobj_id );
+  }
+  *min_fdes    = dobj->fdes[ 0 ];
+  *min_mobj_id = dobj->mobj_id[ 0 ];
+  return;
+}
 
 
 

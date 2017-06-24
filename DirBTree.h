@@ -75,6 +75,18 @@ class DirBTree{
         struct dir_meta_obj* dobj_right, Dir_Nat_Entry_ID_Type dobj_right_id,
         int index);
 
+    void max_of_dobj(
+        struct dir_meta_obj* dobj,
+        Dir_Nat_Entry_ID_Type dobj_id,
+        struct file_descriptor * max_fdes,
+        File_Nat_Entry_ID_Type * max_mobj_id);
+
+    void min_of_dobj(
+        struct dir_meta_obj* dobj,
+        Dir_Nat_Entry_ID_Type dobj_id,
+        struct file_descriptor * min_fdes,
+        File_Nat_Entry_ID_Type * min_mobj_id);
+
     bool verify_node(
         struct dir_meta_obj* dobj,
         Dir_Nat_Entry_ID_Type dobj_id,

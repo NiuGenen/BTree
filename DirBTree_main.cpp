@@ -40,7 +40,11 @@ void auto_test()
   if( !verify ) bt.display();
 
   for(int i = 0; i< ( AUTO_TEST_SIZE / 50 ); ++i){
-    bt.del_file( fdes[ rand() % AUTO_TEST_SIZE ] ) ;
+    int index = rand() % AUTO_TEST_SIZE ;
+    std::cout << " === delete fdes[" << index << "] = " << fdes[index].fhash << std::endl; 
+    bt.del_file( fdes[ index ] ) ;
+    //bt.display();
+    if( !bt.verify() ) exit(1);
   }
   
   std::cout << "verify result = " << ( (verify=bt.verify()) ?"True":"False") << std::endl;
